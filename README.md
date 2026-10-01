@@ -44,8 +44,31 @@ uv run mypy espn_api
 ```
 
 
-## Usage
-### [For Getting Started and API details head over to the Wiki!](https://github.com/cwendt94/espn-api/wiki)
+# Usage, main section needed
+### For ANX repo setup
+```
+git clone https://github.com/cwendt94/espn-api
+cd espn-api
+uv sync
+uv sync --extra dev
+uv run pytest tests --ignore-glob='**/integration/**'
+```
+If some tests fail its fine, the export ran fine. failed ones are from codex created files doing too much.
+
+### Export up to current week
+```
+.\.venv\Scripts\python.exe .\export_football.py --league-id 2052609889
+```
+Inputs are as follows (leave brackets):
+swid:
+{DCD2262B-9570-4713-8396-9C62ADEE96AB}
+
+espn_s2:
+AECBcJZ3w6CSkk1As8bVH96WOYRth3KuqzOGH8%2Ba6bQTEjiAP3MyPvwjKXPElABL8ep%2BOGxHaLEQHd3r1XH%2F7%2BoHL9WozGf87Sk7G5zj%2F5Dhe4Fw%2BCPJqppMgvtTZPclSyo9n4TQJtx3cULISg8lTLO5uqzPsSwhzUSxT3yUdElOsio48nyV4Ej3LyMngQbF5ecrEJ170I6tK4Sfg1gR3t96437walq5rM023hEnTq7cjcqJsrjX2oeDbjX9pcd9fTmarx9qIjTH1f6alXDRDvzVvH235XitfZcBlIBm%2FtX5nA%3D%3D
+
+# Unneeded/already done
+did most of this below already, but thought it was worth while leaving in.
+### From root repo: [For Getting Started and API details head over to the Wiki!](https://github.com/cwendt94/espn-api/wiki)
 ```python
 # Football API
 from espn_api.football import League

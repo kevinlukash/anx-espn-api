@@ -1,0 +1,4 @@
+Requested seasons: 2026
+Exports contain only data returned by ESPN. Empty history does not prove completeness.
+Historical lineups and transactions may be incomplete; current-week scores are provisional.
+

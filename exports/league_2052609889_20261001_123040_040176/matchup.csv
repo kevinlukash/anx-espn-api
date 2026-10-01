@@ -1,0 +1,29 @@
+﻿record_type,league_id,season,week,away_projected,away_score,away_team,home_projected,home_score,home_team,is_playoff,matchup_index,matchup_type
+matchup,2052609889,2026,1,119.42,146.96,"{""team_id"": 4, ""team_name"": ""JD5 Eater""}",117.42000000000002,101.96,"{""team_id"": 3, ""team_name"": ""Fartknocker""}",False,0,NONE
+matchup,2052609889,2026,1,118.38,119.0,"{""team_id"": 1, ""team_name"": ""#freediddy""}",113.30000000000001,167.36,"{""team_id"": 5, ""team_name"": ""Ak's Back2Back campaign""}",False,1,NONE
+matchup,2052609889,2026,1,118.17,79.56,"{""team_id"": 12, ""team_name"": ""L'Jarius Sneed n Em""}",111.68,134.26,"{""team_id"": 7, ""team_name"": ""James's Scary Team""}",False,2,NONE
+matchup,2052609889,2026,1,118.80000000000001,116.14,"{""team_id"": 10, ""team_name"": ""Piss Missile""}",114.69,115.56,"{""team_id"": 6, ""team_name"": ""Rakesh's Rowdy Team""}",False,3,NONE
+matchup,2052609889,2026,1,116.53,154.52,"{""team_id"": 9, ""team_name"": ""Ledos ""}",119.25999999999999,99.1,"{""team_id"": 2, ""team_name"": ""Desert Warriors""}",False,4,NONE
+matchup,2052609889,2026,1,118.85,105.6,"{""team_id"": 11, ""team_name"": ""Twon""}",110.73,114.2,"{""team_id"": 8, ""team_name"": ""Punjabi Freedom Fighters""}",False,5,NONE
+matchup,2052609889,2026,1,121.86999999999999,97.96,"{""team_id"": 13, ""team_name"": ""Skraight Fries""}",119.93,151.32,"{""team_id"": 14, ""team_name"": ""Taking Over""}",False,6,NONE
+matchup,2052609889,2026,2,122.14999999999998,162.18,"{""team_id"": 1, ""team_name"": ""#freediddy""}",117.52,111.98,"{""team_id"": 4, ""team_name"": ""JD5 Eater""}",False,0,NONE
+matchup,2052609889,2026,2,108.00999999999999,98.28,"{""team_id"": 3, ""team_name"": ""Fartknocker""}",121.77000000000001,98.14,"{""team_id"": 12, ""team_name"": ""L'Jarius Sneed n Em""}",False,1,NONE
+matchup,2052609889,2026,2,126.88000000000001,107.88,"{""team_id"": 5, ""team_name"": ""Ak's Back2Back campaign""}",112.38,115.62,"{""team_id"": 10, ""team_name"": ""Piss Missile""}",False,2,NONE
+matchup,2052609889,2026,2,114.33,82.42,"{""team_id"": 7, ""team_name"": ""James's Scary Team""}",116.92999999999998,139.36,"{""team_id"": 9, ""team_name"": ""Ledos ""}",False,3,NONE
+matchup,2052609889,2026,2,110.28,124.42,"{""team_id"": 6, ""team_name"": ""Rakesh's Rowdy Team""}",118.89000000000001,98.86,"{""team_id"": 11, ""team_name"": ""Twon""}",False,4,NONE
+matchup,2052609889,2026,2,120.31000000000002,138.26,"{""team_id"": 2, ""team_name"": ""Desert Warriors""}",126.58999999999999,77.7,"{""team_id"": 13, ""team_name"": ""Skraight Fries""}",False,5,NONE
+matchup,2052609889,2026,2,84.08000000000001,79.8,"{""team_id"": 8, ""team_name"": ""Punjabi Freedom Fighters""}",117.63999999999999,100.22,"{""team_id"": 14, ""team_name"": ""Taking Over""}",False,6,NONE
+matchup,2052609889,2026,3,115.19999999999997,90.56,"{""team_id"": 4, ""team_name"": ""JD5 Eater""}",118.77999999999999,102.78,"{""team_id"": 12, ""team_name"": ""L'Jarius Sneed n Em""}",False,0,NONE
+matchup,2052609889,2026,3,122.92999999999998,148.54,"{""team_id"": 10, ""team_name"": ""Piss Missile""}",123.10999999999999,150.86,"{""team_id"": 1, ""team_name"": ""#freediddy""}",False,1,NONE
+matchup,2052609889,2026,3,117.15,86.32,"{""team_id"": 9, ""team_name"": ""Ledos ""}",110.36000000000001,130.74,"{""team_id"": 3, ""team_name"": ""Fartknocker""}",False,2,NONE
+matchup,2052609889,2026,3,120.02000000000001,111.58,"{""team_id"": 11, ""team_name"": ""Twon""}",118.75999999999999,128.24,"{""team_id"": 5, ""team_name"": ""Ak's Back2Back campaign""}",False,3,NONE
+matchup,2052609889,2026,3,120.36000000000001,110.04,"{""team_id"": 13, ""team_name"": ""Skraight Fries""}",115.96000000000001,113.98,"{""team_id"": 7, ""team_name"": ""James's Scary Team""}",False,4,NONE
+matchup,2052609889,2026,3,132.52,108.56,"{""team_id"": 14, ""team_name"": ""Taking Over""}",104.11999999999999,88.46,"{""team_id"": 6, ""team_name"": ""Rakesh's Rowdy Team""}",False,5,NONE
+matchup,2052609889,2026,3,97.7,91.72,"{""team_id"": 8, ""team_name"": ""Punjabi Freedom Fighters""}",119.54,102.94,"{""team_id"": 2, ""team_name"": ""Desert Warriors""}",False,6,NONE
+matchup,2052609889,2026,4,131.18,0.0,"{""team_id"": 10, ""team_name"": ""Piss Missile""}",129.54,0.0,"{""team_id"": 4, ""team_name"": ""JD5 Eater""}",False,0,NONE
+matchup,2052609889,2026,4,115.95,0.0,"{""team_id"": 12, ""team_name"": ""L'Jarius Sneed n Em""}",115.45,0.0,"{""team_id"": 9, ""team_name"": ""Ledos ""}",False,1,NONE
+matchup,2052609889,2026,4,129.01,0.0,"{""team_id"": 1, ""team_name"": ""#freediddy""}",116.38,0.0,"{""team_id"": 11, ""team_name"": ""Twon""}",False,2,NONE
+matchup,2052609889,2026,4,116.22,0.0,"{""team_id"": 3, ""team_name"": ""Fartknocker""}",112.85,0.0,"{""team_id"": 13, ""team_name"": ""Skraight Fries""}",False,3,NONE
+matchup,2052609889,2026,4,125.16,0.0,"{""team_id"": 5, ""team_name"": ""Ak's Back2Back campaign""}",132.05,0.0,"{""team_id"": 14, ""team_name"": ""Taking Over""}",False,4,NONE
+matchup,2052609889,2026,4,115.92,0.0,"{""team_id"": 7, ""team_name"": ""James's Scary Team""}",95.57,0.0,"{""team_id"": 8, ""team_name"": ""Punjabi Freedom Fighters""}",False,5,NONE
+matchup,2052609889,2026,4,115.11,0.0,"{""team_id"": 6, ""team_name"": ""Rakesh's Rowdy Team""}",99.61,0.0,"{""team_id"": 2, ""team_name"": ""Desert Warriors""}",False,6,NONE
