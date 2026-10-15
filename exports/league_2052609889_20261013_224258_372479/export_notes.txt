@@ -1,0 +1,6 @@
+Requested seasons: 2026
+Exports contain only data returned by ESPN. Empty history does not prove completeness.
+Historical lineups and transactions may be incomplete; current-week scores are provisional.
+waiver.csv includes FREEAGENT and WAIVERS players as an available-player snapshot, not weekly waiver history.
+The library documents the available player pool for the most recent season only; older-season snapshots may be unavailable or unreliable.
+

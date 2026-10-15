@@ -10,6 +10,7 @@ import sys
 
 from espn_api.football import League
 from espn_api.football.constant import TRANSACTION_TYPES
+from espn_api.football.player import Player
 from espn_api.football.team import Team
 
 
@@ -51,6 +52,51 @@ def write_csv(path, rows):
         writer = csv.DictWriter(stream, fieldnames=columns)
         writer.writeheader()
         writer.writerows({k: cell(v) for k, v in row.items()} for row in rows)
+
+
+def waiver_players(league, page_size=100):
+    """Yield the available player snapshot, retaining ESPN's pool status."""
+    offset = 0
+    seen = set()
+    while True:
+        filters = {
+            "players": {
+                "filterStatus": {"value": ["FREEAGENT", "WAIVERS"]},
+                "limit": page_size,
+                "offset": offset,
+                "sortPercOwned": {"sortPriority": 1, "sortAsc": False},
+                "sortDraftRanks": {
+                    "sortPriority": 100,
+                    "sortAsc": True,
+                    "value": "STANDARD",
+                },
+            }
+        }
+        data = league.espn_request.league_get(
+            params={"view": "kona_player_info", "scoringPeriodId": league.current_week},
+            headers={"x-fantasy-filter": json.dumps(filters)},
+        )
+        batch = data.get("players") if isinstance(data, dict) else None
+        if not isinstance(batch, list):
+            raise ValueError("ESPN omitted available player data")
+        if not batch:
+            break
+        new = 0
+        for entry in batch:
+            player_id = entry["player"]["id"]
+            if player_id in seen:
+                continue
+            values = attributes(Player(entry, league.year))
+            # Player does not retain these league-specific availability fields.
+            values["availability_status"] = entry.get("status", "")
+            values["player_pool_entry"] = entry
+            seen.add(player_id)
+            new += 1
+            yield values
+        if not new:
+            raise ValueError("Available player pagination stopped advancing")
+        # Continue to an empty page even if ESPN caps the requested page size.
+        offset += len(batch)
 
 
 def export_season(league, rows, issues):
@@ -99,6 +145,17 @@ def export_season(league, rows, issues):
             )
     for pick in league.draft:
         add("draft", attributes(pick))
+
+    def waivers():
+        for player in waiver_players(league):
+            add("waiver", player, week=league.current_week)
+
+    if league.year >= 2019:
+        attempt("available player pool", waivers)
+    else:
+        issues.append(
+            f"{league.year}: library does not support waiver pool before 2019"
+        )
 
     # Preserve the full schedule, including future games and matchup-period IDs.
     def schedule():
@@ -244,15 +301,20 @@ def main():
             issues.append(message)
         # Save progress after each season, including any partial results.
         write_csv(folder / "league_data.csv", rows)
+        write_csv(
+            folder / "waiver.csv", [r for r in rows if r["record_type"] == "waiver"]
+        )
         (folder / "export_notes.txt").write_text(
             "Requested seasons: " + ", ".join(map(str, years)) + "\n"
             "Exports contain only data returned by ESPN. Empty history does not prove completeness.\n"
             "Historical lineups and transactions may be incomplete; current-week scores are provisional.\n"
+            "waiver.csv includes FREEAGENT and WAIVERS players as an available-player snapshot, not weekly waiver history.\n"
+            "The library documents the available player pool for the most recent season only; older-season snapshots may be unavailable or unreliable.\n"
             + "\n".join(issues)
             + "\n",
             encoding="utf-8",
         )
-    for kind in sorted({r["record_type"] for r in rows}):
+    for kind in sorted({r["record_type"] for r in rows} | {"waiver"}):
         write_csv(folder / f"{kind}.csv", [r for r in rows if r["record_type"] == kind])
     print(f"Saved {len(rows)} records to {folder.resolve() / 'league_data.csv'}")
     print("Separate CSVs by record type and export_notes.txt are in the same folder.")
